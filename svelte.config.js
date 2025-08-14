@@ -1,13 +1,6 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-bash.js';
-import 'prismjs/components/prism-typescript.js';
-import 'prismjs/components/prism-javascript.js';
-import 'prismjs/components/prism-json.js';
-import 'prismjs/components/prism-css.js';
-import 'prismjs/components/prism-markdown.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -16,16 +9,7 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			extensions: ['.md'],
-			highlight: {
-				highlighter: (code, lang) => {
-					if (lang && Prism.languages[lang]) {
-						const highlighted = Prism.highlight(code, Prism.languages[lang], lang);
-						return `<pre class="language-${lang}"><code class="language-${lang}">${highlighted}</code></pre>`;
-					}
-					return `<pre><code>${code}</code></pre>`;
-				}
-			}
+			extensions: ['.md']
 		})
 	],
 

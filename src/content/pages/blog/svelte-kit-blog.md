@@ -42,7 +42,8 @@ export const fetchMarkdownPosts = async () => {
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(
-		iterablePostFiles.map(async ([path, resolver]) => {
+		iterablePostFiles.map(async (entry) => {
+			const [path, resolver] = entry;
 			const { metadata } = (await resolver()) as { metadata: any };
 			const postPath = path.slice(19, -3);
 
@@ -156,7 +157,7 @@ Now that we have the data coming into our +page.svelte file from the props, we c
 
 ## 6. Dynamic Routing
 
-Each blog needs its own page. SvelteKit has routing built in which is handy. Under the routes folder we can add a folder called /blog/[slug] with a +page.svelte file inside. This will represent all blogs and allow them to have their own page, for example blog/getting-started, blog/abc, and any future blogs that will be written.
+Each blog needs its own page. SvelteKit has routing built in which is handy. Under the routes folder we can add a folder called `/blog/[slug]` with a `+page.svelte` file inside. This will represent all blogs and allow them to have their own page, for example `blog/getting-started`, `blog/abc`, and any future blogs that will be written.
 
 In the +page.svelte file, we can access the slug from the page parameters. Then use this slug to search for a corresponding file with that slug as the filename.
 
@@ -176,7 +177,7 @@ export async function load({ params }) {
 }
 ```
 
-Like step 4, the data can be returned to the page via the props and then rendered. Here is my +page.svelte file in the blog/[slug] folder. Because I am using [`mdsvex`](https://github.com/pngwn/MDsveX/tree/main/packages/mdsvex) I can simply render the content directly onto the page!
+Like step 4, the data can be returned to the page via the props and then rendered. Here is my `+page.svelte` file in the `blog/[slug]` folder. Because I am using [`mdsvex`](https://github.com/pngwn/MDsveX/tree/main/packages/mdsvex) I can simply render the content directly onto the page!
 
 ```svelte
 <script lang="ts">
