@@ -7,7 +7,6 @@ import 'prismjs/components/prism-typescript.js';
 import 'prismjs/components/prism-javascript.js';
 import 'prismjs/components/prism-json.js';
 import 'prismjs/components/prism-css.js';
-import 'prismjs/components/prism-svelte.js';
 import 'prismjs/components/prism-markdown.js';
 
 /** @type {import('@sveltejs/kit').Config} */
