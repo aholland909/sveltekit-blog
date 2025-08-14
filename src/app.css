@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+@layer base {
+	h1 {
+		@apply mb-4 text-2xl dark:text-white;
+	}
+	h2 {
+		@apply mt-6 mb-4 text-xl dark:text-white;
+	}
+	p {
+		@apply mt-2 mb-4 dark:text-gray-400;
+	}
+	a {
+		@apply mt-2 mb-4 dark:text-white;
+	}
+	h3 {
+		@apply mt-6 mb-4 text-lg dark:text-white;
+	}
+	h4 {
+		@apply mt-6 mb-4 dark:text-white;
+	}
+	ul {
+		@apply mt-4 mb-4 list-disc pl-5 dark:text-gray-400;
+	}
+	ol {
+		@apply mt-4 mb-4 list-decimal pl-5 dark:text-gray-400;
+	}
+	li {
+		@apply mt-2 mb-2 dark:text-gray-400;
+	}
+	ul li {
+		@apply mt-2 mb-2 dark:text-gray-400;
+	}
+	blockquote {
+		@apply mt-4 mb-4 border-l-4 border-gray-300 pl-4 dark:border-gray-600 dark:text-gray-400;
+	}
+	code {
+		@apply mt-2 mb-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-300;
+	}
+	pre:not([class*='language-']) {
+		@apply mt-4 mb-4 rounded bg-gray-100 p-4 dark:bg-gray-700 dark:text-gray-300;
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+
+	pre[class*='language-'] {
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+	img {
+		@apply mt-4 mb-4 w-70;
+	}
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light mode */
+:root:not(.dark) {
+	@import 'prism-themes/themes/prism-one-light.css';
+}
+/* Dark mode */
+:root.dark {
+	@import 'prism-themes/themes/prism-one-dark.css';
+}
