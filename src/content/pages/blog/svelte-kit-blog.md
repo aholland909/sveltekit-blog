@@ -1,6 +1,6 @@
 ---
 title: 'The SvelteKit Blog'
-date: '2024-05-20'
+date: '2025-08-15'
 author: 'Andy Holland'
 description: How I built this SvelteKit Blog?
 tags: ['sveltekit', 'blog']
