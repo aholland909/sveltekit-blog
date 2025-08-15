@@ -51,7 +51,7 @@ Sometimes we want to render elements depending on some logic. We can use if stat
 
 ```svelte
 <script>
-	let user = $state({ loggedIn: false });
+	let user = { loggedIn: false };
 
 	function toggle() {
 		user.loggedIn = !user.loggedIn;
