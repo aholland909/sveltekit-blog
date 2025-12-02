@@ -4,7 +4,7 @@ date: '2025-08-14'
 author: 'Andy Holland'
 description: Svelte vs React
 tags: ['getting started', 'svelte', 'tutorial']
-featured: true
+featured: false
 ---
 
 # Getting Started with Svelte
